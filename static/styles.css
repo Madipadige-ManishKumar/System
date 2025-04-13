@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(45deg, #001f3f, #0074D9);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    padding: 30px;
+}
+
+.stat-box, .quest-item {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    font-size: 18px;
+    box-shadow: 0 0 10px #00faff;
+}
+
+.quest-btn, .add-btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00faff;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 50%;
+}

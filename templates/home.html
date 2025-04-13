@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Solo Leveling - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Level: {{ user.level }}</h1>
+    <div class="stats">
+      <div class="stat-box">IQ: {{ user.IQ }}</div>
+      <div class="stat-box">Speed: {{ user.speed }}</div>
+      <div class="stat-box">Strength: {{ user.strength }}</div>
+      <div class="stat-box">Consistency: {{ user.consistency }}</div>
+    </div>
+    <a href="{{ url_for('quest') }}"><button class="quest-btn">See Quest</button></a>
+  </div>
+</body>
+</html>

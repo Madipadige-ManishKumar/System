@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Optional: Link to your CSS file for styling -->
+</head>
+<body>
+    <div class="container">
+        <h2>Quest List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Quest Name</th>
+                    <th>Frequency</th>
+                    <th>Category</th>
+                    <th>Done</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for quest in tasks %}
+                <tr>
+                    <td>{{ quest.quest_name }}</td>
+                    <td>{{ quest.frequency }}</td>
+                    <td>{{ quest.category }}</td>
+                    <td>
+                        <form method="POST" action="/update_quest/{{ quest.id }}">
+                            <input type="checkbox" name="done" value="1" {% if quest.done == 1 %}checked{% endif %} onchange="this.form.submit()">
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/delete_quest/{{ quest.id }}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+        <a href="/add_task"><button class="add-task-btn">Add Task</button></a>
+    </div>
+</body>
+</html>
